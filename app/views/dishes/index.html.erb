@@ -1,2 +1,5 @@
 <h1>All dishes</h1>
-<p>Find me in app/views/dishes/index.html.erb</p>
+<% @dishes.each do |dish| %>
+  <p><%= dish.name %></p>
+<% end %>
+<p>There are <%= @dishes.count %> dishes on this site.</p>
