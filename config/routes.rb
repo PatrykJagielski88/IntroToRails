@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'about#index'
+  get "about/index"
   get 'categories/index'
   get 'categories/show'
   get 'dishes/index'
@@ -9,5 +11,4 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :dishes
   resources :categories
-
 end

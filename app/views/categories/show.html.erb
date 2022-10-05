@@ -1,5 +1,5 @@
-<h1>Categories#show</h1>
-<%= @category.meal_time %>
+<h1>The category of: <strong><%= @category.meal_time %></strong></h1>
+
 <% @category.dishes.each do |dish| %>
-  <p><%= link_to dish.name, dish %></p>.
+  <p><%= link_to dish.name, dish %></p>
 <% end %>
