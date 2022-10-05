@@ -3,4 +3,5 @@
   <p>Dish:<%= link_to dish.name, dish %>, Category: <%= link_to dish.category.meal_time, dish.category %></p>
 <% end %>
 <p>There are <%= @dishes.count %> dishes on this site.</p>
+<p><%= paginate @dishes %></p>
 

@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   def index
-    @dishes = Dish.includes(:category).all
+    @dishes = Dish.page(params[:page]).includes(:category).all
   end
 
   def show
