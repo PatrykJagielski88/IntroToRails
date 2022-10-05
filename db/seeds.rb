@@ -30,9 +30,44 @@
 #     stock_quantity: _product['stock quantity'],
 #     category: category
 #   )
-Dish.delete_all
-
+require 'csv'
 require 'net/http'
+
+Dish.delete_all
+Category.delete_all
+
+def load_categories
+  csv_file = Rails.root.join('db/categories.csv')
+  csv_data = File.read(csv_file)
+
+  categories = CSV.parse(csv_data, encoding: 'utf-8')
+
+  # categories.each do |_cat|
+  categories.sample
+end
+
+# 4.times do
+csv_file = Rails.root.join('db/categories.csv')
+csv_data = File.read(csv_file)
+
+categories = CSV.parse(csv_data, encoding: 'utf-8')
+
+categories.each do |row|
+  row.each do |r|
+    puts r
+    Category.create(
+      meal_time: r
+    )
+  end
+end
+# end
+
+# puts load_categories
+# end
+
+# category = Category.find_or_create_by(meal_time: categories['category'])
+# next unless category && category.valid?
+# end
 
 200.times do
   uri = URI('https://www.themealdb.com/api/json/v1/1/random.php')
@@ -47,6 +82,7 @@ require 'net/http'
 
   Dish.create(
     name: Faker::Food.dish,
-    recipe: body
+    recipe: body,
+    category_id: rand(296..298)
   )
 end

@@ -1,6 +1,6 @@
 <h1>All dishes</h1>
 <% @dishes.each do |dish| %>
-  <p>Dish:<%= link_to dish.name, dish %></p>
+  <p>Dish:<%= link_to dish.name, dish %>, Category: <%= link_to dish.category.meal_time, dish.category %></p>
 <% end %>
 <p>There are <%= @dishes.count %> dishes on this site.</p>
 

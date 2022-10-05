@@ -1,0 +1,5 @@
+<h1>All categories</h1>
+<% @categories.each do |category|%>
+  <p>Category:<%= link_to category.meal_time, category %></p>
+<% end %>
+<p>There are <%= @categories.count %> categories on this site.</p>
