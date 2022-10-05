@@ -3,5 +3,7 @@ class DishesController < ApplicationController
     @dishes = Dish.all
   end
 
-  def show; end
+  def show
+    @dish = Dish.find(params[:id])
+  end
 end
