@@ -1,10 +1,12 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.page(params[:page]).all
   end
 
   def show
     @category = Category.find(params[:id])
+    # @cat = @category.page(params[:page]).all
+    @paginatable_array = Kaminari.paginate_array(@category.dishes).page(params[:page])
   end
 end
 # def index

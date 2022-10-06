@@ -8,9 +8,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="assets/application.css">
   </head>
 
   <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title is-1">Welcome to Pat's recipe site!</h1>
+      </div>
+      <p><%= link_to 'All the dishes', dishes_path %></p>
+      <p><%= link_to 'All the categories', categories_path %></p>
+      <p><%= link_to 'About site', "http://127.0.0.1:3000" %></p>
+    </section>
     <%= yield %>
   </body>
 </html>
