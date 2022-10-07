@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'about#index'
-  get "about/index"
+  get 'about/index'
   get 'categories/index'
   get 'categories/show'
   get 'dishes/index'
@@ -9,6 +9,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :dishes
+
+  resources :dishes do
+    # dishes/search/(:format)
+    collection do
+      get 'search'
+    end
+  end
+
   resources :categories
 end
