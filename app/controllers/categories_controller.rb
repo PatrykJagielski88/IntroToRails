@@ -8,6 +8,12 @@ class CategoriesController < ApplicationController
     # @cat = @category.page(params[:page]).all
     @paginatable_array = Kaminari.paginate_array(@category.dishes).page(params[:page])
   end
+
+  def search
+    wildcard_search = "%#{params[:category_id]}%"
+
+    @categories = Category.where('category_id LIKE ?', wildcard_search)
+  end
 end
 # def index
 #   @dishes = Dish.includes(:category).all

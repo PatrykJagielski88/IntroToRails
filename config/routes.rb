@@ -17,5 +17,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories
+  resources :categories do
+    # dishes/search/(:format)
+    collection do
+      get 'search'
+    end
+  end
+  # resources :category_id
 end
