@@ -4,4 +4,5 @@
   <% @dishes_s.each do |dish| %>
     <p><%= link_to dish.name, dish %> category: <%= link_to dish.category.meal_time, dish %></p>
   <% end %>
+  <p>There are <%= @dishes_s.count %> dishes on this page</p>
 <div class = 'smaller'><%= paginate @dishes_s%></div>

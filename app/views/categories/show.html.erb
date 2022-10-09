@@ -3,5 +3,5 @@
 <% @paginatable_array.each do |dish| %>
   <p><%= link_to dish.name, dish %></p>
 <% end %>
-<p>There is <%= @paginatable_array.count %> dishes on this page</p>
+<p>There are <%= @paginatable_array.count %> dishes on this page</p>
 <div class = 'smaller'><%= paginate @paginatable_array %></div>
