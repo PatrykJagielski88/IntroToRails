@@ -51,6 +51,6 @@ end
   Dish.create(
     name: Faker::Food.dish,
     recipe: body,
-    category_id: rand(296..298)
+    category_id: rand(302..304)
   )
 end
