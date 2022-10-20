@@ -1,8 +1,12 @@
 <p class = 'mb-5'>
   Dishes found when searching for: <%= params[:keywords] %>
 </p>
-  <% @dishes_s.each do |dish| %>
+  <% if @dishes_s.empty? %>
+    <p>No dishes were found, please try again.</p>
+  <% else %>
+    <% @dishes_s.each do |dish| %>
     <p><%= link_to dish.name, dish %> category: <%= link_to dish.category.meal_time, dish %></p>
+    <% end %>
   <% end %>
-  <p>There are <%= @dishes_s.count %> dishes on this page</p>
+    <p>There are <%= @dishes_s.count %> dishes on this page</p>
 <div class = 'smaller'><%= paginate @dishes_s%></div>
